@@ -8,6 +8,14 @@ def copyToClipboard():
     validateClipboard()
     checkForRepeat(text)
 
+def killPopUpProcess(processName):
+    os.system("tasklist | findstr " + processName + " > isRunning.txt")
+    f = open("isRunning.txt" ,"r")
+    isLine = f.readline()
+    f.close()
+    if isLine == "":
+        return
+    os.system("taskkill /IM " + '"' + processName +'"' + "/F")
 
 def validateClipboard():
     text = pyc.paste()
@@ -51,6 +59,4 @@ def main():
         click(3407,783,1,2,0)
         
             
-        
-
 main()
