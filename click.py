@@ -1,6 +1,7 @@
 import pyperclip as pyc
 import pyautogui as pgui
 import time
+import os
 
 def copyToClipboard():
     text = pyc.paste()
@@ -34,6 +35,7 @@ def checkForRepeat(text):
         exit(0)
 
 def click(posX,posY,clicks,delay,action):
+    killPopUpProcess("adobeReader.exe")
     pgui.moveTo(posX,posY)
     if clicks > 0:
         for i in range(clicks):
@@ -44,6 +46,7 @@ def click(posX,posY,clicks,delay,action):
         pasteFromClipboard()
     if delay > 0:
         time.sleep(delay)
+    killPopUpProcess("adobeReader.exe")
         
 def main():
     time.sleep(5)
