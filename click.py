@@ -22,6 +22,7 @@ def pasteFromClipboard():
 
 def checkForRepeat(text):
     if text == pyc.paste():
+        pgui.alert(text="Koniec programu" , title="Koniec", button="OK")
         exit(0)
 
 def click(posX,posY,clicks,delay,action):
@@ -38,7 +39,18 @@ def click(posX,posY,clicks,delay,action):
         
 def main():
     time.sleep(5)
-    click(393,354,3,4,1)
-    click(974,64,1,1,2)
+    while True:
+        click(303,206,3,1,1)
+        click(3271,211,1,1,0)
+        click(2785,131,1,1,0)
+        click(2372,1139,1,0,0)
+        click(2372,1139,0,1,2)
+        click(995,684,1,2,0)
+        click(3410,26,1,1,0)
+        click(2906,127,1,1,0)
+        click(3407,783,1,2,0)
+        
+            
+        
 
 main()
